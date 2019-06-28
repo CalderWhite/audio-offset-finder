@@ -1,3 +1,44 @@
+audio-offset-finder, Calder White Fork
+======================================
+
+This fork uses the same underlying methods as the original root.
+I was attempting to process multiple audio files on a 2 hour clip and the
+original fork loads + processes the same 2 hour clip each time. So, I created an object
+for this exact purpose called `OffsetFinder`. This is exclusive to the python module.
+Using `OffsetFinder` you can find the offset on multiple sub-clips using the same pre-processed data
+from the large, original clip.
+
+Installation
+============
+
+```
+pip install git+https://github.com/CalderWhite/audio-offset-finder.git
+```
+
+Usage
+=====
+
+```python
+from audio_offset_finder import OffsetFinder
+
+
+finder = OffsetFinder("file1.mp3")
+
+# load + processes the large original file
+finder.init()
+
+# find the offset of the smaller clip within the finder.
+# If the score is less than 9-10, the offset is no good.
+offset, score = finder.find_offset("file2.mp3")
+```
+
+
+
+
+Here is the rest of the original README file.
+
+---
+
 audio-offset-finder
 ===================
 
@@ -10,10 +51,6 @@ so should be relatively robust to noise (encoding, compression, etc).
 It uses ffmpeg for transcoding, so should work on all file formats
 supported by ffmpeg.
 
-Installation
-------------
-
-    $ pip install audio-offset-finder
 
 Usage
 -----

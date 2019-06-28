@@ -22,9 +22,9 @@ setup(
     name='audio-offset-finder',
     version='0.3.0',
     description='Find the offset of an audio file within another audio file',
-    author='Yves Raimond',
-    author_email='yves.raimond@bbc.co.uk',
-    url='https://github.com/bbcrd/audio-offset-finder',
+    author='Yves Raimond, Calder White',
+    author_email='calderwhite1@gmail.com',
+    url='https://github.com/CalderWhite/audio-offset-finder',
     license='Apache License 2.0',
     packages=['audio_offset_finder'],
     install_requires=[
